@@ -70,8 +70,8 @@ A complete web application with MongoDB, Express, and Node.js featuring user aut
 
 1. Clone the repository:
    ```
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/gmouheb/user-management-men
+   cd user-management-men
    ```
 
 2. Install dependencies:
