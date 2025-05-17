@@ -1,0 +1,56 @@
+<%- include('partials/header', { title: 'Home' }) %>
+
+<div class="row">
+    <div class="col-md-8 mx-auto text-center">
+        <div class="mt-5 mb-5">
+            <h1 class="display-4">Welcome to PFE Iness</h1>
+            <p class="lead">A secure platform with authentication and role-based authorization</p>
+            
+            <% if (typeof user === 'undefined') { %>
+                <div class="mt-4">
+                    <a href="/login" class="btn btn-primary me-2">Login</a>
+                    <a href="/register" class="btn btn-outline-primary">Register</a>
+                </div>
+            <% } else { %>
+                <div class="mt-4">
+                    <% if (user.role === 'admin') { %>
+                        <a href="/admin" class="btn btn-primary">Go to Admin Dashboard</a>
+                    <% } else { %>
+                        <a href="/dashboard" class="btn btn-primary">Go to Dashboard</a>
+                    <% } %>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</div>
+
+<div class="row mt-5">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h3 class="card-title">Secure Authentication</h3>
+                <p class="card-text">User authentication with JWT tokens and password hashing for maximum security.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h3 class="card-title">Role-Based Access</h3>
+                <p class="card-text">Different access levels for analysts and administrators to control permissions.</p>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            <div class="card-body text-center">
+                <h3 class="card-title">Modern Interface</h3>
+                <p class="card-text">Clean and responsive design built with Bootstrap for the best user experience.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('partials/footer') %>

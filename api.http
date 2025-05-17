@@ -1,0 +1,76 @@
+### REGISTER a new user (analyst by default)
+POST http://localhost:5000/api/auth/register
+Content-Type: application/json
+
+{
+  "name": "John Doe admin",
+  "email": "johnadmin@example.com",
+  "password": "password123",
+  "role": "admin"
+
+}
+
+###
+
+### LOGIN as existing user
+POST http://localhost:5000/api/auth/login
+Content-Type: application/json
+
+{
+  "email": "johnadmin@example.com",
+  "password": "password123"
+}
+
+###
+
+### Get CURRENT user (requires JWT token)
+GET http://localhost:5000/api/auth/me
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjhkZDNlZGMyNTE3ZTY1ODBmMTUxNSIsImlhdCI6MTc0NzUwODY1NCwiZXhwIjoxNzUwMTAwNjU0fQ.eblK0FD_Uv9BfkyLbEAPXuzu5nEwx0hM_7KyW5O2xME
+Content-Type: application/json
+
+###
+
+### Get ALL users (admin only)
+GET http://localhost:5000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjhkZDNlZGMyNTE3ZTY1ODBmMTUxNSIsImlhdCI6MTc0NzUwODY1NCwiZXhwIjoxNzUwMTAwNjU0fQ.eblK0FD_Uv9BfkyLbEAPXuzu5nEwx0hM_7KyW5O2xME
+Content-Type: application/json
+
+###
+
+### Get SINGLE user by ID (admin only)
+GET http://localhost:5000/api/users/6828dc18d2f1d8330ec440e9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjhkZDNlZGMyNTE3ZTY1ODBmMTUxNSIsImlhdCI6MTc0NzUwODY1NCwiZXhwIjoxNzUwMTAwNjU0fQ.eblK0FD_Uv9BfkyLbEAPXuzu5nEwx0hM_7KyW5O2xME
+Content-Type: application/json
+
+###
+
+### CREATE new user (admin only)
+POST http://localhost:5000/api/users
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjhkZDNlZGMyNTE3ZTY1ODBmMTUxNSIsImlhdCI6MTc0NzUwODY1NCwiZXhwIjoxNzUwMTAwNjU0fQ.eblK0FD_Uv9BfkyLbEAPXuzu5nEwx0hM_7KyW5O2xME
+Content-Type: application/json
+
+{
+  "name": "Jane Doe",
+  "email": "jane@example.com",
+  "password": "password123",
+  "role": "analyst"
+}
+
+###
+
+### UPDATE existing user (admin only)
+PUT http://localhost:5000/api/users/6828dc18d2f1d8330ec440e9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjhkZDNlZGMyNTE3ZTY1ODBmMTUxNSIsImlhdCI6MTc0NzUwODY1NCwiZXhwIjoxNzUwMTAwNjU0fQ.eblK0FD_Uv9BfkyLbEAPXuzu5nEwx0hM_7KyW5O2xME
+Content-Type: application/json
+
+{
+  "name": "Jane Smith",
+  "role": "admin"
+}
+
+###
+
+### DELETE user (admin only)
+DELETE http://localhost:5000/api/users/6828dc18d2f1d8330ec440e9
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MjhkZDNlZGMyNTE3ZTY1ODBmMTUxNSIsImlhdCI6MTc0NzUwODY1NCwiZXhwIjoxNzUwMTAwNjU0fQ.eblK0FD_Uv9BfkyLbEAPXuzu5nEwx0hM_7KyW5O2xME
+Content-Type: application/json

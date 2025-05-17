@@ -1,0 +1,77 @@
+<%- include('../partials/header', { title: 'Dashboard' }) %>
+
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-primary text-white">
+                <h4 class="mb-0">User Dashboard</h4>
+            </div>
+            <div class="card-body">
+                <p class="lead">Welcome to your dashboard, <%= user.name %>!</p>
+                <p>This is your personal dashboard where you can manage your account and access your data.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="mb-0">Account Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="mb-3">
+                    <strong>Name:</strong> <%= user.name %>
+                </div>
+                <div class="mb-3">
+                    <strong>Email:</strong> <%= user.email %>
+                </div>
+                <div class="mb-3">
+                    <strong>Role:</strong> <%= user.role %>
+                </div>
+                <div class="mb-3">
+                    <strong>Joined:</strong> <%= new Date(user.createdAt).toLocaleDateString() %>
+                </div>
+                <div class="d-grid gap-2">
+                    <a href="/profile" class="btn btn-outline-primary">Edit Profile</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="col-md-6 mb-4">
+        <div class="card h-100">
+            <div class="card-header">
+                <h5 class="mb-0">Quick Actions</h5>
+            </div>
+            <div class="card-body">
+                <div class="list-group">
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">View Reports</h5>
+                            <small><i class="fas fa-chart-bar"></i></small>
+                        </div>
+                        <p class="mb-1">Access your analytics reports and data visualizations.</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Manage Settings</h5>
+                            <small><i class="fas fa-cog"></i></small>
+                        </div>
+                        <p class="mb-1">Configure your account settings and preferences.</p>
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h5 class="mb-1">Help & Support</h5>
+                            <small><i class="fas fa-question-circle"></i></small>
+                        </div>
+                        <p class="mb-1">Get help with using the platform and features.</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('../partials/footer') %>
